@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>H5移动端一些判断 | 那你很棒啊，给你鼓鼓掌</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kainwong.github.io/favicon.ico?v=1594460444487">
+<link rel="stylesheet" href="https://kainwong.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="一些H5移动端环境语言判断方法
+
+是否微信环境
+function isWeiXin() {
+      var ua = window.navigator.userAgent.toLowerCase();
+      //mozilla/5..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <!--
+ * @Author: your name
+ * @Date: 2020-06-30 14:00:52
+ * @LastEditTime: 2020-06-30 17:32:38
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \kainwong.github.ioc:\Users\gmys\Documents\Gridea\themes\simple\templates\_blocks\sidebar.ejs
+--> 
+<div class="sidebar" :class="{ 'full-height': menuVisible }">
+    <div style="background:rgba(255,255,255,0.2);height:100%;display: flex;flex-direction: column;">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://kainwong.github.io">
+        <img src="https://kainwong.github.io/images/avatar.png?v=1594460444487" class="site-logo">
+        <h1 class="site-title">那你很棒啊，给你鼓鼓掌</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            文章
+          </a>
+        
+      
+        
+          <a href="/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      著名的杂技天后曾说：不努力就去死。（白眼）
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://kainwong.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">H5移动端一些判断</h2>
+            <div class="post-date">2020-07-01</div>
+            
+              <div class="feature-container" style="background-image: url('https://kainwong.github.io/post-images/h5-yi-dong-duan-yi-xie-pan-duan.jpg')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>一些H5移动端环境语言判断方法</p>
+<!-- more -->
+<p><strong>是否微信环境</strong></p>
+<pre><code>function isWeiXin() {
+      var ua = window.navigator.userAgent.toLowerCase();
+      //mozilla/5.0 (iphone; cpu iphone os 9_1 like mac os x) applewebkit/601.1.46 (khtml, like gecko)version/9.0 mobile/13b143 safari/601.1
+      if(ua.match(/MicroMessenger/i) == 'micromessenger') {
+          return true;
+      } else {
+          return false;
+      }
+  }
+</code></pre>
+<p><strong>判断安卓还是iOS环境</strong></p>
+<pre><code>function isAndroid_ios() {  
+    var u = navigator.userAgent, app = navigator.appVersion;  
+    var isAndroid = u.indexOf('Android') &gt; -1 || u.indexOf('Linux') &gt; -1; //android终端或者uc浏览器  
+    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端  
+    if(isAndroid) {
+        return 'Android'
+    }
+    if(isAndroid) {
+        return 'iOS'
+    }
+}
+</code></pre>
+<p><strong>获取浏览器语言</strong></p>
+<pre><code>function language() {
+    var browserLanguage =  navigator.browserLanguage;
+    var userLanguage = navigator.userLanguage;
+    var language = navigator.language;
+    return browserLanguage || userLanguage || language;
+}
+'''
+</code></pre>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://kainwong.github.io/post/qian-duan-yi-dong-duan-gua-pei/">
+                  <h3 class="post-title">
+                    前端移动端适配
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: [''],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

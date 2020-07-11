@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>前端emijo表情转码解码 | 那你很棒啊，给你鼓鼓掌</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kainwong.github.io/favicon.ico?v=1594460444487">
+<link rel="stylesheet" href="https://kainwong.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="在做评论的时候，测试说输入emijo表情，结果会显示代码，所以要实现转码喽。
+
+  //表情转码
+  utf16toEntities(str) {
+        var patt=/[\ud800-\udbff][\udc00-\udff..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <!--
+ * @Author: your name
+ * @Date: 2020-06-30 14:00:52
+ * @LastEditTime: 2020-06-30 17:32:38
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \kainwong.github.ioc:\Users\gmys\Documents\Gridea\themes\simple\templates\_blocks\sidebar.ejs
+--> 
+<div class="sidebar" :class="{ 'full-height': menuVisible }">
+    <div style="background:rgba(255,255,255,0.2);height:100%;display: flex;flex-direction: column;">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://kainwong.github.io">
+        <img src="https://kainwong.github.io/images/avatar.png?v=1594460444487" class="site-logo">
+        <h1 class="site-title">那你很棒啊，给你鼓鼓掌</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            文章
+          </a>
+        
+      
+        
+          <a href="/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      著名的杂技天后曾说：不努力就去死。（白眼）
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://kainwong.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">前端emijo表情转码解码</h2>
+            <div class="post-date">2020-06-30</div>
+            
+              <div class="feature-container" style="background-image: url('https://kainwong.github.io/post-images/qian-duan-emijo-biao-qing-zhuan-ma-jie-ma.jpg')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>在做评论的时候，测试说输入emijo表情，结果会显示代码，所以要实现转码喽。</p>
+<!-- more -->
+<pre><code>  //表情转码
+  utf16toEntities(str) {
+        var patt=/[\ud800-\udbff][\udc00-\udfff]/g;
+        // 检测utf16字符正则
+        str = str.replace(patt, function(char){
+            var H, L, code;
+            if (char.length===2) {
+                H = char.charCodeAt(0);
+                // 取出高位
+                L = char.charCodeAt(1);
+                // 取出低位
+                code = (H - 0xD800) * 0x400 + 0x10000 + L - 0xDC00;
+                // 转换算法
+                var ss = &quot;&amp;#&quot; + code + &quot;;&quot;;
+                return ss;
+            } else {
+                return char;
+            }
+        });
+        return str;
+    },
+
+//表情解码
+ uncodeUtf16(str){
+        var reg = /\&amp;#.*?;/g;
+        var result = str.replace(reg,function(char){
+            var H,L,code;
+            if(char.length == 9 ){
+                code = parseInt(char.match(/[0-9]+/g));
+                H = Math.floor((code-0x10000) / 0x400)+0xD800;
+                L = (code - 0x10000) % 0x400 + 0xDC00;
+                return unescape(&quot;%u&quot;+H.toString(16)+&quot;%u&quot;+L.toString(16));
+            }else{
+                return char;
+            }
+        });
+        return result;
+    }</code></pre>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://kainwong.github.io/post/js-shi-xian-tong-xun-lu-hao-you-pai-xu/">
+                  <h3 class="post-title">
+                    js实现通讯录好友排序
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: [''],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>js实现复制到剪贴板方法 | 那你很棒啊，给你鼓鼓掌</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kainwong.github.io/favicon.ico?v=1594460444487">
+<link rel="stylesheet" href="https://kainwong.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="转载自：https://www.cnblogs.com/guohu/p/9764869.html
+
+实现点击按钮，复制文本框中的的内容
+&lt;script type=&quot;text/javascript&quot;&gt;
+func..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <!--
+ * @Author: your name
+ * @Date: 2020-06-30 14:00:52
+ * @LastEditTime: 2020-06-30 17:32:38
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \kainwong.github.ioc:\Users\gmys\Documents\Gridea\themes\simple\templates\_blocks\sidebar.ejs
+--> 
+<div class="sidebar" :class="{ 'full-height': menuVisible }">
+    <div style="background:rgba(255,255,255,0.2);height:100%;display: flex;flex-direction: column;">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://kainwong.github.io">
+        <img src="https://kainwong.github.io/images/avatar.png?v=1594460444487" class="site-logo">
+        <h1 class="site-title">那你很棒啊，给你鼓鼓掌</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            文章
+          </a>
+        
+      
+        
+          <a href="/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      著名的杂技天后曾说：不努力就去死。（白眼）
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://kainwong.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">js实现复制到剪贴板方法</h2>
+            <div class="post-date">2020-07-02</div>
+            
+              <div class="feature-container" style="background-image: url('https://kainwong.github.io/post-images/js-shi-xian-fu-zhi-dao-jian-tie-ban-fang-fa.jpg')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>转载自：<a href="https://www.cnblogs.com/guohu/p/9764869.html">https://www.cnblogs.com/guohu/p/9764869.html</a></p>
+<!-- more -->
+<p><strong>实现点击按钮，复制文本框中的的内容</strong></p>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+function copyUrl2()
+{
+var Url2=document.getElementById(&quot;biao1&quot;);
+Url2.select(); // 选择对象
+document.execCommand(&quot;Copy&quot;); // 执行浏览器复制命令
+alert(&quot;已复制好，可贴粘。&quot;);
+}
+&lt;/script&gt;
+&lt;textarea cols=&quot;20&quot; rows=&quot;10&quot; id=&quot;biao1&quot;&gt;用户定义的代码区域&lt;/textarea&gt;
+&lt;input type=&quot;button&quot; onClick=&quot;copyUrl2()&quot; value=&quot;点击复制代码&quot; /&gt;
+</code></pre>
+<p><strong>复制专题地址和 url 地址，传给 QQ/MSN 上的好友</strong></p>
+<pre><code>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;head&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=gb2312&quot; /&gt;
+&lt;title&gt;Js复制代码&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;
+&lt;input type=&quot;button&quot; name=&quot;anniu1&quot; onClick='copyToClipBoard()' value=&quot;复制专题地址和url地址，传给QQ/MSN上的好友&quot;&gt;
+&lt;script language=&quot;javascript&quot;&gt;
+function copyToClipBoard(){
+var clipBoardContent=&quot;&quot;;
+clipBoardContent+=document.title;
+clipBoardContent+=&quot;&quot;;
+clipBoardContent+=this.location.href;
+window.clipboardData.setData(&quot;Text&quot;,clipBoardContent);
+alert(&quot;复制成功，请粘贴到你的QQ/MSN上推荐给你的好友&quot;);
+}
+&lt;/script&gt;
+</code></pre>
+<p><strong>直接复制 url</strong></p>
+<pre><code>&lt;input type=&quot;button&quot; name=&quot;anniu2&quot; onClick='copyUrl()' value=&quot;复制URL地址&quot;&gt;
+&lt;script language=&quot;javascript&quot;&gt;
+function copyUrl()
+{
+var clipBoardContent=this.location.href;
+window.clipboardData.setData(&quot;Text&quot;,clipBoardContent);
+alert(&quot;复制成功!&quot;);
+}
+&lt;/script&gt;
+</code></pre>
+<p><strong>点击文本框时，复制文本框里面的内容</strong></p>
+<pre><code>&lt;input onclick=&quot;oCopy(this)&quot; value=&quot;你好.要copy的内容!&quot;&gt;
+&lt;script language=&quot;javascript&quot;&gt;
+function oCopy(obj){
+obj.select();
+js=obj.createTextRange();
+js.execCommand(&quot;Copy&quot;)
+alert(&quot;复制成功!&quot;);
+}
+&lt;/script&gt;
+</code></pre>
+<p><strong>复制文本框或者隐藏域中的内容</strong></p>
+<pre><code>&lt;script language=&quot;javascript&quot;&gt;
+function CopyUrl(target){
+target.value=myimg.value;
+target.select();
+js=myimg.createTextRange();
+js.execCommand(&quot;Copy&quot;);
+alert(&quot;复制成功!&quot;);
+}
+function AddImg(target){
+target.value=&quot;[IMG]&quot;+myimg.value+&quot;[/ img]&quot;;
+target.select();
+js=target.createTextRange();
+js.execCommand(&quot;Copy&quot;);
+alert(&quot;复制成功!&quot;);
+}
+&lt;/script&gt;
+</code></pre>
+<p><strong>复制 span 标记中的内容</strong></p>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+&lt;/script&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;function copyText(obj)
+{
+var rng = document.body.createTextRange();
+rng.moveToElementText(obj);
+rng.scrollIntoView();
+rng.select();
+rng.execCommand(&quot;Copy&quot;);
+rng.collapse(false);
+alert(&quot;复制成功!&quot;);
+}
+&lt;/script&gt;
+</code></pre>
+<p><strong>浏览器兼容  copyToClipboard(&quot;拷贝内容&quot;)</strong></p>
+<pre><code>function copyToClipboard(txt) {
+   if (window.clipboardData) {
+    window.clipboardData.clearData();
+    clipboardData.setData(&quot;Text&quot;, txt);
+    alert(&quot;复制成功！&quot;);
+  
+   } else if (navigator.userAgent.indexOf(&quot;Opera&quot;) != -1) {
+    window.location = txt;
+   } else if (window.netscape) {
+    try {
+     netscape.security.PrivilegeManager.enablePrivilege(&quot;UniversalXPConnect&quot;);
+    } catch (e) {
+     alert(&quot;被浏览器拒绝！\n请在浏览器地址栏输入'about:config'并回车\n然后将 'signed.applets.codebase_principal_support'设置为'true'&quot;);
+    }
+    var clip = Components.classes['@mozilla.org/widget/clipboard;1'].createInstance(Components.interfaces.nsIClipboard);
+    if (!clip)
+     return;
+    var trans = Components.classes['@mozilla.org/widget/transferable;1'].createInstance(Components.interfaces.nsITransferable);
+    if (!trans)
+     return;
+    trans.addDataFlavor(&quot;text/unicode&quot;);
+    var str = new Object();
+    var len = new Object();
+    var str = Components.classes[&quot;@mozilla.org/supports-string;1&quot;].createInstance(Components.interfaces.nsISupportsString);
+    var copytext = txt;
+    str.data = copytext;
+    trans.setTransferData(&quot;text/unicode&quot;, str, copytext.length * 2);
+    var clipid = Components.interfaces.nsIClipboard;
+    if (!clip)
+     return false;
+    clip.setData(trans, null, clipid.kGlobalClipboard);
+    alert(&quot;复制成功！&quot;);
+   }
+  }
+</code></pre>
+<p><strong>兼容各大浏览器的复制代码（结合ZeroClipboard.js）</strong></p>
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Zero Clipboard Test&lt;/title&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;ZeroClipboard.js&quot;&gt;&lt;/script&gt;
+&lt;script language=&quot;JavaScript&quot;&gt;
+var clip = null;
+function $(id) { return document.getElementById(id); }
+function init() {
+ clip = new ZeroClipboard.Client();
+ clip.setHandCursor(true); 
+ clip.addEventListener('mouseOver', function (client) {
+// update the text on mouse over
+clip.setText( $('fe_text').value );
+ });
+  
+ clip.addEventListener('complete', function (client, text) {
+//debugstr(&quot;Copied text to clipboard: &quot; + text );
+alert(&quot;该地址已经复制，你可以使用Ctrl+V 粘贴。&quot;);
+ });
+ clip.glue('clip_button', 'clip_container' );
+}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body onLoad=&quot;init()&quot;&gt;
+&lt;input id=&quot;fe_text&quot; cols=50 rows=5 value=复制内容文本1 &gt;
+&lt;span id=&quot;clip_container&quot;&gt;&lt;span id=&quot;clip_button&quot;&gt;&lt;b&gt;复制&lt;/b&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://kainwong.github.io/post/h5-yi-dong-duan-yi-xie-pan-duan/">
+                  <h3 class="post-title">
+                    H5移动端一些判断
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: [''],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

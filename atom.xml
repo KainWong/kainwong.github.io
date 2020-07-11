@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://kainwong.github.io</id>
+    <title>那你很棒啊，给你鼓鼓掌</title>
+    <updated>2020-07-11T09:40:48.323Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://kainwong.github.io"/>
+    <link rel="self" href="https://kainwong.github.io/atom.xml"/>
+    <subtitle>著名的杂技天后曾说：不努力就去死。（白眼）</subtitle>
+    <logo>https://kainwong.github.io/images/avatar.png</logo>
+    <icon>https://kainwong.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2020, 那你很棒啊，给你鼓鼓掌</rights>
+    <entry>
+        <title type="html"><![CDATA[小王的健身日记]]></title>
+        <id>https://kainwong.github.io/post/xiao-wang-de-jian-shen-ri-ji/</id>
+        <link href="https://kainwong.github.io/post/xiao-wang-de-jian-shen-ri-ji/">
+        </link>
+        <updated>2020-07-11T09:02:18.000Z</updated>
+        <summary type="html"><![CDATA[<p>这些都是慢慢更新的照片，练好久了，还是希望过程中能慢慢有长进的，以后也不定期更新。。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>这些都是慢慢更新的照片，练好久了，还是希望过程中能慢慢有长进的，以后也不定期更新。。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[山水画]]></title>
+        <id>https://kainwong.github.io/post/shan-shui-hua/</id>
+        <link href="https://kainwong.github.io/post/shan-shui-hua/">
+        </link>
+        <updated>2020-07-07T07:52:02.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[js实现复制到剪贴板方法]]></title>
+        <id>https://kainwong.github.io/post/js-shi-xian-fu-zhi-dao-jian-tie-ban-fang-fa/</id>
+        <link href="https://kainwong.github.io/post/js-shi-xian-fu-zhi-dao-jian-tie-ban-fang-fa/">
+        </link>
+        <updated>2020-07-02T03:14:19.000Z</updated>
+        <summary type="html"><![CDATA[<p>转载自：<a href="https://www.cnblogs.com/guohu/p/9764869.html">https://www.cnblogs.com/guohu/p/9764869.html</a></p>
+]]></summary>
+        <content type="html"><![CDATA[<p>转载自：<a href="https://www.cnblogs.com/guohu/p/9764869.html">https://www.cnblogs.com/guohu/p/9764869.html</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[H5移动端一些判断]]></title>
+        <id>https://kainwong.github.io/post/h5-yi-dong-duan-yi-xie-pan-duan/</id>
+        <link href="https://kainwong.github.io/post/h5-yi-dong-duan-yi-xie-pan-duan/">
+        </link>
+        <updated>2020-07-01T05:40:46.000Z</updated>
+        <summary type="html"><![CDATA[<p>一些H5移动端环境语言判断方法</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>一些H5移动端环境语言判断方法</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[前端移动端适配]]></title>
+        <id>https://kainwong.github.io/post/qian-duan-yi-dong-duan-gua-pei/</id>
+        <link href="https://kainwong.github.io/post/qian-duan-yi-dong-duan-gua-pei/">
+        </link>
+        <updated>2020-07-01T02:49:04.000Z</updated>
+        <summary type="html"><![CDATA[<p>对前端工作者来说，适配是一个老生常谈的问题。目前为止出现的一些关于移动端适配的技术方案，试了很多个人还是觉得rem最舒服。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>对前端工作者来说，适配是一个老生常谈的问题。目前为止出现的一些关于移动端适配的技术方案，试了很多个人还是觉得rem最舒服。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[html判断页面滚动到最底部]]></title>
+        <id>https://kainwong.github.io/post/html-pan-duan-ye-mian-gun-dong-dao-zui-di-bu/</id>
+        <link href="https://kainwong.github.io/post/html-pan-duan-ye-mian-gun-dong-dao-zui-di-bu/">
+        </link>
+        <updated>2020-07-01T01:56:31.000Z</updated>
+        <summary type="html"><![CDATA[<p>移动端判断手机页面是不是在最低端，是的话就再次加载数据，实现滚动加载</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>移动端判断手机页面是不是在最低端，是的话就再次加载数据，实现滚动加载</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[前端手动实现拖拽移动并在边界不被遮挡]]></title>
+        <id>https://kainwong.github.io/post/qian-duan-shou-dong-shi-xian-tuo-zhuai-yi-dong-bing-zai-bian-jie-bu-bei-zhe-dang/</id>
+        <link href="https://kainwong.github.io/post/qian-duan-shou-dong-shi-xian-tuo-zhuai-yi-dong-bing-zai-bian-jie-bu-bei-zhe-dang/">
+        </link>
+        <updated>2020-07-01T01:51:20.000Z</updated>
+        <summary type="html"><![CDATA[<p>在做聊天系统的时候聊天框要可以拖动，并且不能超过屏幕边界</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>在做聊天系统的时候聊天框要可以拖动，并且不能超过屏幕边界</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[前端emijo表情转码解码]]></title>
+        <id>https://kainwong.github.io/post/qian-duan-emijo-biao-qing-zhuan-ma-jie-ma/</id>
+        <link href="https://kainwong.github.io/post/qian-duan-emijo-biao-qing-zhuan-ma-jie-ma/">
+        </link>
+        <updated>2020-06-30T07:30:26.000Z</updated>
+        <summary type="html"><![CDATA[<p>在做评论的时候，测试说输入emijo表情，结果会显示代码，所以要实现转码喽。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>在做评论的时候，测试说输入emijo表情，结果会显示代码，所以要实现转码喽。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[js实现通讯录好友排序]]></title>
+        <id>https://kainwong.github.io/post/js-shi-xian-tong-xun-lu-hao-you-pai-xu/</id>
+        <link href="https://kainwong.github.io/post/js-shi-xian-tong-xun-lu-hao-you-pai-xu/">
+        </link>
+        <updated>2020-06-30T06:07:39.000Z</updated>
+        <summary type="html"><![CDATA[<p>在做web端聊天系统，他们要求好友列表和APP一样从A-Z排序，APP他们有插件，我就在网上找了一通，没找到，exo me?所以我就搜了 个别代码自己拼接了。so sad.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>在做web端聊天系统，他们要求好友列表和APP一样从A-Z排序，APP他们有插件，我就在网上找了一通，没找到，exo me?所以我就搜了 个别代码自己拼接了。so sad.</p>
+]]></content>
+    </entry>
+</feed>
