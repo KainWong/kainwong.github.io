@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>H5移动端一些判断 | 那你很棒啊，给你鼓鼓掌</title>
+<title>APP字体设置放大导致H5页面布局乱 | 那你很棒啊，给你鼓鼓掌</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -24,12 +24,11 @@
 
 
 
-    <meta name="description" content="一些H5移动端环境语言判断方法
+    <meta name="description" content="今天做完一个app分享的邀请H5页面，后来测试说有个手机布局乱了。我看了手机发现字体很大，猜测是字体调大导致的。后来网上查了问题解决了。
 
-是否微信环境
-function isWeiXin() {
-      var ua = window.navigator.userAgent.toLowerCase();
-      //mozilla/5..." />
+ios系统：
+body{
+    -webkit-text-size-adjust: 100% !i..." />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -105,47 +104,54 @@ function isWeiXin() {
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">H5移动端一些判断</h2>
-            <div class="post-date">2020-07-01</div>
+            <h2 class="post-title">APP字体设置放大导致H5页面布局乱</h2>
+            <div class="post-date">2020-08-01</div>
             
-              <div class="feature-container" style="background-image: url('https://kainwong.github.io/post-images/h5-yi-dong-duan-yi-xie-pan-duan.jpg')">
+              <div class="feature-container" style="background-image: url('https://kainwong.github.io/post-images/app-zi-ti-she-zhi-fang-da-dao-zhi-h5-ye-mian-bu-ju-luan.jpg')">
               </div>
             
             <div class="post-content" v-pre>
-              <p>一些H5移动端环境语言判断方法</p>
+              <p>今天做完一个app分享的邀请H5页面，后来测试说有个手机布局乱了。我看了手机发现字体很大，猜测是字体调大导致的。后来网上查了问题解决了。</p>
 <!-- more -->
-<p><strong>是否微信环境</strong></p>
-<pre><code>function isWeiXin() {
-      var ua = window.navigator.userAgent.toLowerCase();
-      //mozilla/5.0 (iphone; cpu iphone os 9_1 like mac os x) applewebkit/601.1.46 (khtml, like gecko)version/9.0 mobile/13b143 safari/601.1
-      if(ua.match(/MicroMessenger/i) == 'micromessenger') {
-          return true;
-      } else {
-          return false;
-      }
-  }
+<p>ios系统：</p>
+<pre><code>body{
+    -webkit-text-size-adjust: 100% !important;
+}
 </code></pre>
-<p><strong>判断安卓还是iOS环境</strong></p>
-<pre><code>function isAndroid_ios() {  
-    var u = navigator.userAgent, app = navigator.appVersion;  
-    var isAndroid = u.indexOf('Android') &gt; -1 || u.indexOf('Linux') &gt; -1; //android终端或者uc浏览器  
-    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端  
-    if(isAndroid) {
-        return 'Android'
-    }
-    if(isAndroid) {
-        return 'iOS'
+<p>安卓系统：</p>
+<pre><code>function htmlFontSize(){
+    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    var width = w &gt; h ? h : w;
+    width = width &gt; 720 ? 720 : width
+    var fz = ~~(width*100000/36)/10000
+    document.getElementsByTagName(&quot;html&quot;)[0].style.cssText = 'font-size: ' + fz +&quot;px&quot;;
+    var realfz = ~~(+window.getComputedStyle(document.getElementsByTagName(&quot;html&quot;)[0]).fontSize.replace('px','')*10000)/10000
+    if (fz !== realfz) {
+        document.getElementsByTagName(&quot;html&quot;)[0].style.cssText = 'font-size: ' + fz * (fz / realfz) +&quot;px&quot;;
     }
 }
 </code></pre>
-<p><strong>获取浏览器语言</strong></p>
-<pre><code>function language() {
-    var browserLanguage =  navigator.browserLanguage;
-    var userLanguage = navigator.userLanguage;
-    var language = navigator.language;
-    return browserLanguage || userLanguage || language;
-}
-'''
+<p>客户端我不太清楚，网上查是这样的：</p>
+<pre><code>WebSettings settings = webView.getSettings();
+settings.setTextZoom(100);
+</code></pre>
+<p>微信客户端：</p>
+<pre><code>(function() {
+    if (typeof WeixinJSBridge == &quot;object&quot; &amp;&amp; typeof WeixinJSBridge.invoke == &quot;function&quot;) {
+        handleFontSize();
+    } else {
+        document.addEventListener(&quot;WeixinJSBridgeReady&quot;, handleFontSize, false);
+    }
+    function handleFontSize() {
+        // 设置网页字体为默认大小
+        WeixinJSBridge.invoke(&quot;setFontSizeCallback&amp;&quot;, { &quot;fontSize&quot; : 0 });
+        // 重写设置网页字体大小的事件
+        WeixinJSBridge.on(&quot;menu:setfont&quot;, function() {
+            WeixinJSBridge.invoke(&quot;setFontSizeCallback&quot;, { &quot;fontSize&amp;&quot; : 0 });
+        });
+    }
+})();
 </code></pre>
 
             </div>
@@ -153,9 +159,9 @@ function isWeiXin() {
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://kainwong.github.io/post/qian-duan-yi-dong-duan-gua-pei/">
+                <a href="https://kainwong.github.io/post/xiao-wang-de-jian-shen-ri-ji/">
                   <h3 class="post-title">
-                    前端移动端适配
+                    小王的健身日记
                   </h3>
                 </a>
               </div>

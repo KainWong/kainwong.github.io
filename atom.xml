@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kainwong.github.io</id>
     <title>那你很棒啊，给你鼓鼓掌</title>
-    <updated>2020-07-11T09:47:27.751Z</updated>
+    <updated>2020-08-01T06:10:49.051Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kainwong.github.io"/>
     <link rel="self" href="https://kainwong.github.io/atom.xml"/>
@@ -10,6 +10,17 @@
     <logo>https://kainwong.github.io/images/avatar.png</logo>
     <icon>https://kainwong.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 那你很棒啊，给你鼓鼓掌</rights>
+    <entry>
+        <title type="html"><![CDATA[APP字体设置放大导致H5页面布局乱]]></title>
+        <id>https://kainwong.github.io/post/app-zi-ti-she-zhi-fang-da-dao-zhi-h5-ye-mian-bu-ju-luan/</id>
+        <link href="https://kainwong.github.io/post/app-zi-ti-she-zhi-fang-da-dao-zhi-h5-ye-mian-bu-ju-luan/">
+        </link>
+        <updated>2020-08-01T05:59:49.000Z</updated>
+        <summary type="html"><![CDATA[<p>今天做完一个app分享的邀请H5页面，后来测试说有个手机布局乱了。我看了手机发现字体很大，猜测是字体调大导致的。后来网上查了问题解决了。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>今天做完一个app分享的邀请H5页面，后来测试说有个手机布局乱了。我看了手机发现字体很大，猜测是字体调大导致的。后来网上查了问题解决了。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[小王的健身日记]]></title>
         <id>https://kainwong.github.io/post/xiao-wang-de-jian-shen-ri-ji/</id>
